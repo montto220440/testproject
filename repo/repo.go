@@ -15,6 +15,7 @@ func GetOneStatement(resource *db.Resource, collection string, filter interface{
 	fmt.Println("filter", filter)
 	err := resource.DB.Collection(collection).FindOne(ctx, filter).Decode(data)
 	if err != nil {
+		fmt.Println("err", err)
 		return err
 	}
 	return nil

@@ -3,9 +3,9 @@ package model
 import "time"
 
 type PersonalData struct {
-	ID struct {
-		Oid string `json:"$oid"`
-	} `json:"_id"`
+	// ID struct {
+	// 	Oid string `json:"$oid"`
+	// } `json:"_id"`
 	Username       string `json:"username"`
 	UsernamePrefix string `json:"username_prefix"`
 	DateRegis      struct {
@@ -53,4 +53,9 @@ type PersonalData struct {
 	TopupBonus    int    `json:"topup_bonus"`
 	TopupNobonus  int    `json:"topup_nobonus"`
 	ProfileURL    string `json:"profile_url"`
+}
+
+type LoginData struct {
+	Username       string `json:"username"`
+	Password    string `json:"password"`
 }

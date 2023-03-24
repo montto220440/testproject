@@ -5,6 +5,7 @@ import "time"
 type ListRequest struct {
 	Id       int    `json:"id" binding:"required"`
 	Username string `json:"username"`
+	Password string `json:"password"`
 	Phone    string `json:"phone"`
 	Age      string `json:"age"`
 	Gender   string `json:"gender"`
