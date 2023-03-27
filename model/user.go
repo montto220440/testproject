@@ -56,6 +56,13 @@ type PersonalData struct {
 }
 
 type LoginData struct {
-	Username       string `json:"username"`
-	Password    string `json:"password"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type KeyData struct {
+	UserName string `json:"username"`
+	Role     string `json:"role"`
+	Key      string `json:"key"`
+	UserType      string `json:"usertype"`
 }

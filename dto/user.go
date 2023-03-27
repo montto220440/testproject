@@ -3,18 +3,17 @@ package dto
 import "time"
 
 type ListRequest struct {
-	Id       int    `json:"id" binding:"required"`
+	// Id       int    `json:"id" binding:"required"`
 	Username string `json:"username"`
 	Password string `json:"password"`
-	Phone    string `json:"phone"`
-	Age      string `json:"age"`
-	Gender   string `json:"gender"`
+	Phone    string `json:"phone_number"`
+	UserType      string `json:"user_type"`
 }
 
 type ListResponse struct {
-	ID struct {
-		Oid string `json:"$oid"`
-	} `json:"_id"`
+	// ID struct {
+	// 	Oid string `json:"$oid"`
+	// } `json:"_id"`
 	Username       string `json:"username"`
 	UsernamePrefix string `json:"username_prefix"`
 	DateRegis      struct {

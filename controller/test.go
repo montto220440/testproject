@@ -51,14 +51,12 @@ func UpdateUserAccount(resource *db.Resource) func(c *gin.Context) {
 			c.JSON(400, gin.H{"error": err.Error()})
 			return
 		}
-		filter := bson.M{"id": form.Id}
+		filter := bson.M{"username": form.Username}
 		filterOp := bson.M{
 			"$set": bson.M{
-				"username": form.Username,
 				"password": form.Password,
 				"phone":    form.Phone,
-				"age":      form.Age,
-				"gender":   form.Gender,
+				"usertype": form.UserType,
 			}}
 		repo.UpdateUser(resource, "member_account", filter, filterOp)
 		// c.JSON(200, gin.H{"Success to update member": form})
@@ -74,9 +72,9 @@ func DeleteUserAccount(resource *db.Resource) func(c *gin.Context) {
 			c.JSON(400, gin.H{"error": err.Error()})
 			return
 		}
-		filter := bson.M{"id": form.Id}
+		filter := bson.M{"id": form.Username}
 		repo.DeleteUser(resource, "member_account", filter)
 		// c.JSON(200, gin.H{"Success to delete member": form.Id})
-		service.Resp(c, 200, "Success to delete member", form.Id)
+		service.Resp(c, 200, "Success to delete member", form.Username)
 	}
 }
